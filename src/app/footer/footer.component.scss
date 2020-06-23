@@ -1,0 +1,57 @@
+.small_size {
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  color: black;
+}
+
+.aplication i,
+.aplication a {
+  color: black;
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    font-size: 14px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 767px) and (orientation:portrait) {
+    font-size: 12px;
+  }
+}
+
+.social_media h2 {
+  text-align: right;
+}
+
+.social_media i {
+  font-size: 20px;
+  border-radius: 80px;
+  background-color: #093479;
+  height: 30px;
+  width: 30px;
+  color: white;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+
+.menu_additional {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-top: 0.5px solid lightgray;
+  border-bottom: 0.5px solid lightgray;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  a {
+    color: #093479;
+    text-decoration: none;
+
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      font-size: 9px;
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
+      font-size: 8px;
+    }
+  }
+}

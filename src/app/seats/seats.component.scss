@@ -1,0 +1,17 @@
+.free {
+  fill: green;
+  opacity: 0.61499999;
+  stroke: #000000;
+}
+
+.occupied {
+  fill: red;
+}
+
+.plane {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

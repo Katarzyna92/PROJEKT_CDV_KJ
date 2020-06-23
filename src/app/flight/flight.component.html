@@ -1,0 +1,161 @@
+<!-- Ekran wejściowy do wyboru połączenia-->
+<form>
+  <h2>Wybór lotu</h2>
+  <div class="row">
+
+    <!-- <div>
+      <label for="country_departure">
+        <span class="large_text">Z</span>
+      </label>
+      <select #country_departure type="button" data-toggle="dropdown">
+        <option [value]="city" *ngFor="let city of opts">
+          {{city.key}}
+        </option>
+      </select>
+    </div> -->
+    <div>
+      <label for="country_departure">
+        <span class="large_text">Z</span>
+      </label>
+      <select #country_departure type="button" data-toggle="dropdown">
+        <option value="Warszawa">Warszawa</option>
+        <option value="Gdańsk">Gdańsk</option>
+        <option value="Kraków">Kraków</option>
+        <option value="Paryż">Paryż</option>
+        <option value="Rzym">Rzym</option>
+        <option value="Berlin">Berlin</option>
+        <option value="Nowy Jork">Nowy Jork</option>
+        <option value="San Francisco">San Francisco</option>
+        <option value="Chicago">Chicago</option>
+      </select>
+    </div>
+
+    <span><i class="fas fa-exchange-alt"></i></span>
+
+    <!-- <div>
+      <label for="country_arrival">
+        <span class="large_text">Do</span>
+      </label>
+      <select #country_arrival type="button" data-toggle="dropdown">
+        <option [value]="city" *ngFor="let city of opts">
+          {{city.key}}
+        </option>
+      </select>
+    </div> -->
+    <div>
+      <label for="country_arrival">
+        <span class="large_text">Do</span>
+      </label>
+      <select #country_arrival type="button" data-toggle="dropdown">
+        <option value="Warszawa">Warszawa</option>
+        <option value="Gdańsk">Gdańsk</option>
+        <option value="Kraków">Kraków</option>
+        <option value="Paryż">Paryż</option>
+        <option value="Rzym">Rzym</option>
+        <option value="Berlin">Berlin</option>
+        <option value="Nowy Jork">Nowy Jork</option>
+        <option value="San Francisco">San Francisco</option>
+        <option value="Chicago">Chicago</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div>
+      <label>
+        <span class="large_text">Data wylotu</span>
+      </label>
+      <input type="date" #date_departure min="2020-06-23">
+      <div>
+        <!-- {{today | date: "yyyy-MM-dd"}} -->
+      </div>
+    </div>
+
+    <div>
+      <label>
+        <span class="large_text">Data powrotu</span>
+      </label>
+      <input type="date" #date_arrival min="2020-06-24">
+      <div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="passengers">
+      <label for="numbers_of_passengers">
+        <span class="large_text">Liczba pasażerów</span>
+      </label>
+      <select #numbers_of_passengers>
+        <option value="0">0</option>
+        <option value="1" selected="selected">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+
+      <label for="children">
+        <span class="large_text">W tym dzieci</span>
+      </label>
+      <select #children>
+        <option value="0" selected="selected">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+
+      <label for="seniors">
+        <span class="large_text">W tym seniorzy</span>
+      </label>
+      <select #seniors>
+        <option value="0" selected="selected">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+    </div>
+  </div>
+
+  <button type="button" class=" summary btn btn-success"
+    (click)="showCountryDeparture(country_departure.value); showCountryArrival(country_arrival.value); showDateDeparture(date_departure.value); showDateArrival(date_arrival.value); showNumbersPassengers(numbers_of_passengers.value); showNumbersChildren(children.value); showNumbersSeniors(seniors.value); showInformation() ">Sprawdź
+    wprowadzone dane</button>
+
+  <div [ngStyle]="unsubscribe" id="summary_information">
+
+    <p>Z: {{countryDeparture}}</p>
+    <p>Do: {{countryArrival}}</p>
+    <p>Data wylotu: {{dateDeparture}}</p>
+    <p>Data powrotu: {{dateArrival}}</p>
+    <p>Liczba pasażerów: {{numbersPassengers}}</p>
+    <p>W tym dzieci: {{numbersChildren}}</p>
+    <p>W tym seniorzy: {{numbersSeniors}}</p>
+  </div>
+
+  <div class="row">
+    <a routerLink="/login"><button type="button" class="btn btn-danger">
+        <span>Logowanie </span>
+        <i class="fas fa-plane"></i>
+      </button></a>
+  </div>
+
+</form>
+
+<router-outlet> </router-outlet>

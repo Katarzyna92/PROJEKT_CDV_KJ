@@ -1,0 +1,25 @@
+<!-- Logowanie -->
+<form>
+  <h2>Logowanie</h2>
+
+  <div>
+    <input type="text" placeholder="e-mail" #email>
+    <input type="password" placeholder="hasło" #password>
+  </div>
+
+  <div class="row">
+    <button (click)="logowanie(email, password)" type="button" class=" btn btn-danger">
+      <span>Zaloguj się </span>
+      <i class="fas fa-plane"></i>
+    </button>
+  </div>
+
+  <div>{{ comUser }}</div>
+
+  <div>{{ info }}</div>
+
+</form>
+
+
+<router-outlet> </router-outlet>
+
