@@ -8,12 +8,9 @@
 .aplication i,
 .aplication a {
   color: black;
+  font-size: 14px;
 
-  @media only screen and (min-width: 768px) and (max-width: 992px) {
-    font-size: 14px;
-  }
-
-  @media only screen and (min-width: 600px) and (max-width: 767px) and (orientation:portrait) {
+  @media only screen and (max-width: 599px)and (orientation: portrait) {
     font-size: 12px;
   }
 }
@@ -32,6 +29,13 @@
   display: block;
   text-align: center;
   line-height: 30px;
+
+  @media only screen and (max-width: 599px)and (orientation: portrait) {
+    font-size: 10px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+  }
 }
 
 .menu_additional {
@@ -52,6 +56,10 @@
 
     @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
       font-size: 8px;
+    }
+
+    @media only screen and (max-width: 599px)and (orientation: portrait) {
+      font-size: 7px;
     }
   }
 }

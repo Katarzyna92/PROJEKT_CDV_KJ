@@ -2,33 +2,33 @@
 <form>
   <h2>Podsumowanie</h2>
 
-  <button (click)="complete()" type="button" class="summary btn btn-success">Wypisz wszystkie dane</button>
-
-  <div id="summary_information">
     <p>Z: {{countryDeparture}}</p>
     <p>Do: {{countryArrival}}</p>
     <p>Data wylotu: {{dateDeparture}}</p>
     <p>Data powrotu: {{dateArrival}}</p>
     <p>Liczba pasażerów: {{numbersPassengers}}</p>
-    <p>Cena jednego biletu: {{priceFlight | currency: "PLN"}}</p>
     <p>Imię: {{firstName}} </p>
     <p>Nazwisko: {{lastName}} </p>
     <p>Adres: {{addressName}} </p>
     <p>Opłata za dodatkowy bagaż: {{luggageValue | currency: "PLN"}} </p>
     <p>Zniżka dla dziecka: {{discountChildrenValue | percent }} </p>
     <p>Zniżka dla seniora: {{discountSeniorsValue | percent }} </p>
-    <p>Suma: {{ price | currency: "PLN"}}</p>
-    <!-- <p>{{ price | currency: "EUR"}}</p>
-    <p>{{ price | currency: "USD"}}</p> -->
+    <p class="large_text">Suma do zapłaty:</p>
+    <p>{{ price | currency: "PLN"}}</p>
 
-    <select #currency (change)="checkPrice(currency.value)">
-      <option value="" disabled selected>Przelicz w innej walucie:</option>
-      <option value="eur">Euro</option>
-      <option value="chf">Frank szwajcarski</option>
-      <option value="usd">Dolar amerykański</option>
-    </select>
-    <p>{{showOption}}</p>
+  <select #currency (change)="checkPrice(currency.value)">
+    <option value="" disabled selected>Wybierz walutę</option>
+    <option value="eur">Euro</option>
+    <option value="chf">Frank szwajcarski</option>
+    <option value="usd">Dolar amerykański</option>
+  </select>
+  <p>{{showOption1 | currency: "EUR"}}</p>
+  <p>{{showOption2 | currency: "CHF"}}</p>
+  <p>{{showOption3 | currency: "USD"}}</p>
 
+  <a href="https://online.mbank.pl/pl/Login" target="_blank"><button type="button" class="summary btn btn-success">Przejdź do płatności</button></a>
+
+  <div class="undo">
+    <a routerLink="/details"><i class="fas fa-arrow-circle-left"></i></a>
   </div>
-
 </form>

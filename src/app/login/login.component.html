@@ -3,8 +3,8 @@
   <h2>Logowanie</h2>
 
   <div>
-    <input type="text" placeholder="e-mail" #email>
-    <input type="password" placeholder="hasło" #password>
+    <input type="text" placeholder="E-mail" #email name="email">
+    <input type="password" placeholder="Hasło" #password name="password">
   </div>
 
   <div class="row">
@@ -18,8 +18,12 @@
 
   <div>{{ info }}</div>
 
+
+  <div class="undo">
+    <a routerLink="/flight"><i class="fas fa-arrow-circle-left"></i></a>
+  </div>
+
 </form>
 
 
 <router-outlet> </router-outlet>
-

@@ -1,28 +1,28 @@
 <!-- Uzupełnienie danych pasażera-->
 <form>
   <h2>Dane pasażera</h2>
-  <div class="row">
 
+  <div class="row large_text">
     <div>
-      <label for="first_name" class="large_text">Imię</label>
+      <label for="first_name">Imię</label>
       <input #first_name placeholder="Wpisz imię" type="text">
     </div>
 
     <div>
-      <label for="last_name" class="large_text">Nazwisko</label>
+      <label for="last_name">Nazwisko</label>
       <input #last_name placeholder="Wpisz nazwisko" type="text">
     </div>
 
     <div>
-      <label for="address" class="large_text">Adres</label>
+      <label for="address">Adres</label>
       <input #address placeholder="Wpisz adres" type="text">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row large_text">
     <div>
-      <label class="large_text">
-        <span class="large_text">Dodatkowy bagaż</span>
+      <label>
+        <span>Dodatkowy bagaż</span>
       </label>
       <select #luggage>
         <option selected="selected" value="0">Nie</option>
@@ -31,7 +31,7 @@
     </div>
 
     <div>
-      <label class="large_text">
+      <label>
         <span>Zniżka dla dziecka</span>
       </label>
       <select #discountChildren>
@@ -39,8 +39,9 @@
         <option value="500">Tak</option>
       </select>
     </div>
+
     <div>
-      <label class="large_text">
+      <label>
         <span>Zniżka dla seniora</span>
       </label>
       <select #discountSeniors>
@@ -50,28 +51,19 @@
     </div>
   </div>
 
-  <button type="button" class="summary btn btn-success"
-    (click)="showFirstName(first_name.value); showLastName(last_name.value); showAddress(address.value); showLuggage(luggage.value); showDiscountChildren(discountChildren.value);showDiscountSeniors(discountSeniors.value); showInformation()">Sprawdź
-    wprowadzone dane</button>
-
-  <div [ngClass]="hidden" id="summary_information">
-
-    <p>Twoje imię: {{firstName}}</p>
-    <p>Twoje nazwisko: {{lastName}}</p>
-    <p>Twój adres: {{addressName}}</p>
-    <p>Twój dodatkowy bagaż: {{luggageValue | currency: "PLN"}}</p>
-    <p>Twoja zniżka dla dziecka: {{discountChildrenValue | percent }}</p>
-    <p>Twoja zniżka dla seniora: {{discountSeniorsValue | percent }}</p>
-  </div>
-
   <div class="row justify-content-center">
-    <a routerLink="/summary"><button type="button" class="btn btn-danger">
+    <a routerLink="/summary"><button type="button" class="btn btn-danger"
+        (click)="showFirstName(first_name.value); showLastName(last_name.value); showAddress(address.value); showLuggage(luggage.value); showDiscountChildren(discountChildren.value);showDiscountSeniors(discountSeniors.value)">
         <span>Przejdź do podsumowania </span>
         <i class="fas fa-plane"></i>
       </button></a>
   </div>
+
+  <div class="undo">
+    <a routerLink="/seats"><i class="fas fa-arrow-circle-left"></i></a>
+  </div>
+
 </form>
 
 
 <router-outlet> </router-outlet>
-

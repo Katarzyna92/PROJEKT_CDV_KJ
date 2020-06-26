@@ -8,20 +8,18 @@ import { Router } from '@angular/router';
 })
 export class FlightComponent implements OnInit {
 
-  // public cities = ["Warszawa","Paryż","Londyn","Rzym","Nowy Jork","San Francisco","Chicago","Gdańsk","Kraków","Poznań"];
+public cities = ['Warszawa', 'Gdańsk', 'Kraków', 'Paryż', 'Londyn', 'Rzym', 'Nowy Jork', 'San Francisco', 'Chicago',];
 
-  // public opts = [
-  //   {key: 'Warszawa', value: ["Warszawa, Paryż"]},
-  //   {key: 'Paryż', value: ["Nowy Jork, Paryż"]},
-  //   {key: 'Londyn', value: ["Rzym, Londyn"]},
-  //   {key: 'Rzym', value: ["Paryż, Londyn"]},
-  //   {key: 'Nowy Jork', value: ["Nowy Jork, Londyn"]},
-  //   {key: 'San Francisco', value: ["Paryż, San Francisco"]},
-  //   {key: 'Chicago', value: ["Rzym, Chicago"]},
-  //   {key: 'Gdańsk', value: ["Kraków, Gdańsk"]},
-  //   {key: 'Kraków', value: ["Warszawa,Kraków"]},
-  //   {key: 'Poznań', value: ["Warszawa, Poznań"]},
-  // ];
+public arrivalCity = '';
+public departureCity = '';
+
+get departureCities(): Array<string> {
+  return this.cities.filter(city => city !== this.arrivalCity);
+}
+
+get arrivalCities(): Array<string> {
+  return this.cities.filter(city => city !== this.departureCity);
+}
 
 public countryDeparture = '';
 public countryArrival = '';
@@ -31,64 +29,57 @@ public numbersPassengers = '';
 public numbersSeniors = '';
 public numbersChildren = '';
 
-public unsubscribe = {display: "none"};
-
 public today = new Date();
+public tomorrow;
+// public tomorrow = new Date(this.today.getTime() + 24 * 60 * 60 * 1000);
 
 constructor(private router: Router) {}
 
 
-  // public i = 0;
-
   ngOnInit(): void {
-    // this.i = 0;
   }
 
+  ngAfterViewInit(): void {
+  this.tomorrow = this.dateDeparture;
+  }
   showCountryDeparture(departureCountry){
     this.countryDeparture = departureCountry;
-    localStorage.setItem("Wylot", this.countryDeparture);
+    localStorage.setItem('Wylot', this.countryDeparture);
   }
 
   showCountryArrival(departureArrival){
     this.countryArrival = departureArrival;
-    localStorage.setItem("Przylot", this.countryArrival);
-    if (this.countryDeparture == this.countryArrival){
-      alert("Uwaga! Wybrałeś dwa takie same lotniska. Dokonaj zmiany.")
-    }
-    else{console.log('Poprawne dane')}
+    localStorage.setItem('Przylot', this.countryArrival);
+    // if (this.countryDeparture == this.countryArrival){
+    //   alert("Uwaga! Wybrałeś dwa takie same lotniska. Dokonaj zmiany.")
+    // }
+    // else{console.log('Poprawne dane')}
   }
 
   showDateDeparture(departureDate){
     this.dateDeparture = departureDate;
-    localStorage.setItem("Data wylotu", this.dateDeparture);
+    this.tomorrow = this.dateDeparture;
+    localStorage.setItem('Data wylotu', this.dateDeparture);
   }
 
   showDateArrival(arrivalDate){
     this.dateArrival = arrivalDate;
-    localStorage.setItem("Data powrotu", this.dateArrival);
+    localStorage.setItem('Data powrotu', this.dateArrival);
   }
 
   showNumbersPassengers(passengersNumbers){
     this.numbersPassengers = passengersNumbers;
-    localStorage.setItem("Liczba pasażerów", this.numbersPassengers);
+    localStorage.setItem('Liczba pasażerów', this.numbersPassengers);
   }
 
   showNumbersChildren(childrenNumbers){
     this.numbersChildren = childrenNumbers;
-    localStorage.setItem("Dzieci", this.numbersChildren);
+    localStorage.setItem('Dzieci', this.numbersChildren);
   }
 
   showNumbersSeniors(seniorsNumbers){
     this.numbersSeniors = seniorsNumbers;
-    localStorage.setItem("Seniorzy", this.numbersSeniors);
+    localStorage.setItem('Seniorzy', this.numbersSeniors);
   }
-
-  showInformation(){
-  this.unsubscribe = {display: "block"};
-  }
-
-  // counter(){
-  //   console.log(this.i++);
-  // }
 
 }

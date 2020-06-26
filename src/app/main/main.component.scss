@@ -5,6 +5,10 @@
   height: 80vh;
   z-index: -1;
 
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    height: 60vh;
+  }
+
   @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
     height: 50vh;
   }
@@ -27,14 +31,6 @@
     color: white;
 
     @media only screen and (min-width: 768px) and (max-width: 992px) {
-      font-size: 14px;
-    }
-
-    @media only screen and (max-width: 599px)and (orientation: portrait) {
-      font-size: 12px;
-    }
-
-    @media only screen and (min-width: 768px) and (max-width: 992px) {
       font-size: 40px;
     }
 
@@ -47,13 +43,13 @@
     }
   }
 
-  a {
+  button {
     display: inline-block;
+    background-color: transparent;
     color: white;
     border: solid 2px white;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
     font-size: 18px;
     text-align: center;
     padding: 1%;
@@ -62,7 +58,7 @@
     margin: 2% 40%;
 
     @media only screen and (min-width: 768px) and (max-width: 992px) {
-      font-size: 14px;
+      font-size: 16px;
     }
 
     @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
@@ -85,19 +81,6 @@
 }
 
 .picture2 {
-  background: url("./../../assets/img/plane.jpg");
-  background-repeat: no-repeat;
-  background-position: 100%, 100%;
-  height: 70vh;
-  z-index: -1;
-
-  @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
-    height: 50vh;
-  }
-
-  @media only screen and (max-width: 599px)and (orientation: portrait) {
-    height: 40vh;
-  }
 
   h3 {
     padding-top: 10%;
@@ -105,7 +88,6 @@
     text-transform: uppercase;
     font-size: 16px;
     color: white;
-    text-shadow: 0.1em 0.1em darkgrey;
 
     @media only screen and (max-width: 599px)and (orientation: portrait) {
       font-size: 12px;
@@ -128,8 +110,7 @@
     color: white;
     cursor: pointer;
     font-size: 18px;
-    text-decoration: underline;
-    text-shadow: 0.1em 0.1em darkgrey;
+    text-decoration: none;
 
     @media only screen and (max-width: 599px)and (orientation: portrait) {
       font-size: 12px;
@@ -145,23 +126,23 @@
   height: 200px;
 
   @media only screen and (min-width: 993px) and (max-width: 1200px) {
-    width: 200px;
+    width: 160px;
     height: 150px;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     width: 150px;
-    height: 150px;
+    height: 140px;
   }
 
   @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
-    width: 130px;
-    height: 150px;
+    width: 120px;
+    height: 130px;
   }
 
   @media only screen and (max-width: 599px)and (orientation: portrait) {
-    width: 70px;
-    height: 150px;
+    width: 100px;
+    height: 120px;
   }
 
   i {
@@ -173,13 +154,22 @@
     text-decoration: none;
 
     @media only screen and (min-width: 993px) and (max-width: 1200px) {
-      font-size: 70px;
       line-height: 150px;
     }
 
     @media only screen and (min-width: 768px) and (max-width: 992px) {
+      font-size: 70px;
+      line-height: 140px;
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
       font-size: 60px;
-      line-height: 150px;
+      line-height: 130px;
+    }
+
+    @media only screen and (max-width: 599px)and (orientation: portrait) {
+      font-size: 50px;
+      line-height: 120px;
     }
   }
 }
@@ -192,8 +182,8 @@
   text-align: center;
 
   @media only screen and (min-width: 993px) and (max-width: 1200px) {
-    width: 200px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -202,13 +192,13 @@
   }
 
   @media only screen and (min-width: 600px) and (max-width: 767px) and (orientation:portrait) {
-    width: 130px;
-    height: 150px;
+    width: 120px;
+    height: 160px;
   }
 
   @media only screen and (max-width: 599px)and (orientation: portrait) {
-    width: 70px;
-    height: 150px;
+    width: 100px;
+    height: 170px;
   }
 
   h3 {
@@ -234,7 +224,6 @@
 
     @media only screen and (max-width: 599px)and (orientation: portrait) {
       font-size: 10px;
-      padding-bottom: 2px;
     }
   }
 
@@ -243,7 +232,7 @@
     font-size: 14px;
 
     @media only screen and (min-width: 993px) and (max-width: 1200px) {
-      font-size: 11px;
+      font-size: 12px;
     }
 
     @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -261,28 +250,23 @@
 
   a {
     color: #093479;
-    padding: 14px;
     font-size: 14px;
-    text-decoration: underline;
+    text-decoration: none;
 
     @media only screen and (min-width: 993px) and (max-width: 1200px) {
       font-size: 11px;
-      padding: 5px;
     }
 
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       font-size: 10px;
-      padding: 3px;
     }
 
     @media only screen and (min-width: 600px) and (max-width: 767px) and (orientation:portrait) {
       font-size: 9px;
-      padding: 2px;
     }
 
     @media only screen and (max-width: 599px)and (orientation: portrait) {
-      font-size: 7px;
-      padding: 2px;
+      font-size: 8px;
     }
 
     &:hover {
@@ -348,4 +332,80 @@
 
 #koronawirus {
   padding-top: 50px;
+}
+
+.popup {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  background-color: #f1f2f4;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  border: 4px solid #093479;
+  color: #093479;
+  text-align: center;
+
+  h4 {
+    font-size: 40px;
+    padding: 20px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.closePopup {
+  text-align: center;
+  padding: 50px;
+
+  i {
+    font-size: 50px;
+    color: #093479;
+  }
+}
+
+.slider {
+  height: 70vh;
+  overflow: hidden;
+  max-width: 1920px;
+  background-image: url("./../../assets/img/plane.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: slajdy 7s linear infinite;
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    height: 60vh;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
+    height: 50vh;
+    background-attachment: scroll;
+  }
+
+  @media only screen and (max-width: 599px)and (orientation: portrait) {
+    height: 40vh;
+    background-attachment: scroll;
+  }
+}
+
+@keyframes slajdy {
+  0% {
+    background-image: url("./../../assets/img/plane.jpg");
+  }
+
+  49% {
+    background-image: url("./../../assets/img/plane.jpg");
+  }
+
+  50% {
+    background-image: url("./../../assets/img/aircraft.jpg");
+  }
+
+  100% {
+    background-image: url("./../../assets/img/aircraft.jpg");
+  }
 }

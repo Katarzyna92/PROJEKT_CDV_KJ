@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit  } from '@angular/core';
 import { seatsArray } from './seats';
 
 @Component({
@@ -6,7 +6,7 @@ import { seatsArray } from './seats';
   templateUrl: './seats.component.html',
   styleUrls: ['./seats.component.scss']
 })
-export class SeatsComponent implements OnInit {
+export class SeatsComponent implements OnInit,  AfterViewInit {
 
 
 public flightType = '';
@@ -15,21 +15,32 @@ public bombardier = {display: "none"};
 public boeing737 = {display: "none"};
 public boeing787 = {display: "none"};
 
+
+public popup = false;
+
 public priceFlight = '';
 
 public numbersPassenger;
+public arrayNew: Array<string> = [];
 
-;
-// public free = "green";
-// public occupied = "red";
-// public free = {fill: "green"};
-// public occupied = {fill: "red"};
-// public occupied = false;
-// public free = true;
+public hidden = {display: "none"};
+
+public readonly maxSeats = 9;
+// public readonly maxSeats = this.numbersPassenger;
+
+@ViewChild('num')
+public num: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    for (var i = 0; i < seatsArray.length; i++) {
+      document.getElementById(seatsArray[i]).setAttribute('class', 'free');
+    }
+    this.checkSeats();
+  }
 
 showFlightType(typeFlight){
 this.priceFlight = typeFlight;
@@ -40,56 +51,49 @@ if (typeFlight == '1000'){
     this.bombardier = {display: 'block'};
     this.boeing737 = {display: 'none'};
     this.boeing787 = {display: 'none'};
-    this.flightType = "Bombardier";
+    this.flightType = 'Bombardier';
+    this.num.nativeElement.innerHTML = '';
   }
 else if (typeFlight == '2000'){
     this.boeing737 = {display: 'block'};
     this.bombardier = {display: 'none'};
     this.boeing787 = {display: 'none'};
-    this.flightType = "Boeing 737";
+    this.flightType = 'Boeing 737';
+    this.num.nativeElement.innerHTML = '';
   }
 else{
     this.boeing787 = {display: 'block'};
     this.bombardier = {display: 'none'};
     this.boeing737 = {display: 'none'};
-    this.flightType = "Boeing 787";
+    this.flightType = 'Boeing 787';
+    this.num.nativeElement.innerHTML = '';
   }
+
 }
 
 
 checkSeats(){
-
-  var arrayNew =[];
-  var numbersMax = 9;
-  // var numbersMax = this.numbersPassenger;
-
-
+  let that = this;
 
   for (var i = 0; i < seatsArray.length; i++) {
 
-    document.getElementById(seatsArray[i]).addEventListener("click", function() {
+    document.getElementById(seatsArray[i]).addEventListener('click', function() {
 
-      arrayNew.push(this.id);
-      console.log(arrayNew);
-      console.log(arrayNew.toString());
-
-      if (document.getElementById(this.id).getAttribute("class") == "occupied"){
-      document.getElementById(this.id).removeAttribute("style");
-      document.getElementById(this.id).setAttribute("class", "free");
-
-      document.getElementById("num").innerHTML = this.id;
-
-      // document.getElementById("num").innerHTML = arrayNew.toString();
-
-      // document.getElementById("num2").innerHTML = arrayNew[0].toString() + arrayNew[1].toString()+ arrayNew[2].toString()+ arrayNew[3].toString()+ arrayNew[4].toString()+ arrayNew[5].toString()+ arrayNew[6].toString()+ arrayNew[7].toString()+ arrayNew[8].toString();
-
+      if (that.arrayNew.length < that.maxSeats && document.getElementById(this.id).getAttribute('class') == 'free'){
+      document.getElementById(this.id).removeAttribute('style');
+      document.getElementById(this.id).setAttribute('class', 'occupied');
+      that.arrayNew.push(this.id);
   }
   else{
-    document.getElementById(this.id).removeAttribute("style");
-    document.getElementById(this.id).setAttribute("class", "occupied");
+    document.getElementById(this.id).removeAttribute('style');
+    document.getElementById(this.id).setAttribute('class', 'free');
+    that.arrayNew = that.arrayNew.filter(element => element !== this.id);
       }
+      that.num.nativeElement.innerHTML = that.arrayNew.join(', ');
   });
 }
 }
-
+showInformation(){
+  this.hidden = {display: 'block'};
+}
 }

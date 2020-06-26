@@ -6,16 +6,26 @@
       <li class="picture1">
         <div>
           <span>
-            <h3>Zaplanuj swoją podróż z LOT-em</h3>
+            <h3>Zaplanuj bezpieczną podróż z LOT-em</h3>
           </span>
           <span>
-            <p>Elastycznie i bez ukrytych opłat</p>
+            <p>#LOTnaWakacje</p>
           </span>
-          <a href="#">Sprawdź szczegóły <i class="fas fa-chevron-right"></i></a>
+          <button (click)="showPopup()">Sprawdź szczegóły <i class="fas fa-chevron-right"></i></button>
         </div>
       </li>
     </ul>
   </section>
+
+  <div class="popup" [ngStyle]="hidden">
+    <a class="closePopup" (click)="close()">
+      <p><i class="fas fa-times-circle"></i></p>
+    </a>
+    <h4>#LOTnaWakacje <i class="fas fa-plane"></i> </h4>
+    <p>Szukasz pomysłu na letni wypoczynek?</p>
+    <p>Sprawdź naszą ofertę na loty na wakacje i zaplanuj swój letni urlop już dziś!</p>
+    <p>Teraz w LOT ulubione kierunki wakacyjne w super atrakcyjnych cenach!</p>
+  </div>
   <!-- koniec sekcji 1 -->
 
   <!-- SEKCJA 2 cztery kwadraty -->
@@ -26,9 +36,9 @@
         <div>
           <div class="blue_square"><i class="far fa-comment-alt"></i></div>
           <div class="gray_square">
-            <h3>FAQ</h3>
-            <p>Odpowiedzi na najczęściej zadawane pytania.</p>
-            <a><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></a>
+            <h3>#BezpiecznyLOT</h3>
+            <p>Poznaj zasady bezpieczeństwa obowiązujące na totnisku i pokładzie samolotu</p>
+            <a href="#"><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></a>
           </div>
         </div>
       </li>
@@ -38,9 +48,9 @@
         <div>
           <div class="blue_square"><i class="far fa-question-circle"></i></div>
           <div class="gray_square">
-            <h3>Aktualne informacje dla pasażerów</h3>
-            <p>Aktualne informacje dla pasażerów związane z sytuacją epidemiologiczną w Polsce,</p>
-            <a><span><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></span></a>
+            <h3>Aktualne informacje</h3>
+            <p>Aktualne informacje dla pasażerów związane z sytuacją epidemiologiczną w Polsce</p>
+            <a href="#"><span><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></span></a>
           </div>
         </div>
       </li>
@@ -50,9 +60,9 @@
         <div>
           <div class="blue_square"><i class="far fa-calendar-alt"></i></div>
           <div class="gray_square">
-            <h3>Zawieszenie ruchu lotniczego</h3>
-            <p>Informacja o zawieszeniu ruchu międzynarodowych połączeń lotnicznych.</p>
-            <a><span>Sprawdź <i class="fas fa-chevron-right" id="arrow"></i></span></a>
+            <h3>Zawieszenie lotów</h3>
+            <p>Informacja o zawieszeniu ruchu międzynarodowych połączeń lotnicznych</p>
+            <a href="#"><span>Sprawdź <i class="fas fa-chevron-right" id="arrow"></i></span></a>
           </div>
         </div>
       </li>
@@ -62,9 +72,9 @@
         <div>
           <div class="blue_square"><i class="far fa-file-alt"></i></div>
           <div class="gray_square">
-            <h3>Zmiana / zwrot biletów</h3>
-            <p>Procedura zmian lub zwrotów biletów.</p>
-            <a><span>Sprawdź <i class="fas fa-chevron-right" id="arrow"></i></span></a>
+            <h3>Pobierz E-prasę</h3>
+            <p>W trosce o Wasz komfort wprowadzilismy cyfrowa prasę</p>
+            <a href="#"><span>Sprawdź <i class="fas fa-chevron-right" id="arrow"></i></span></a>
           </div>
         </div>
       </li>
@@ -77,11 +87,10 @@
   <section>
     <ul>
       <li class="picture2">
-        <div>
+        <div class="slider">
           <h3><span>SPRAWDŹ SPECJALNE LOTY DO POLSKI</span></h3>
           <p><span><span>#CARGOdlaPolski</span></span></p>
-          <a href="#"><span><span>Zarezerwuj swoje cargo <i class="fas fa-plane"></i><i
-                  class="fas fa-chevron-right"></i></span></span></a>
+          <a href="#"><span>Zarezerwuj swoje cargo <i class="fas fa-plane"></i></span></a>
         </div>
       </li>
     </ul>
@@ -98,7 +107,7 @@
         </div>
         <div class="gray_square">
           <p>Sprawdź informacje dla pasażerów dotyczące sytuacji związanej z koronawirusem.</p>
-          <a><span>Czytaj dalej </span><i class="fas fa-chevron-right" id="arrow"></i></a>
+          <a href="#"><span>Czytaj dalej </span><i class="fas fa-chevron-right" id="arrow"></i></a>
         </div>
       </li>
       <!-- koniec 1 kwadrat -->
@@ -110,7 +119,7 @@
             <h3>Gwarancja Najlepszej Ceny</h3>
             <p><span>Nie szukaj ofert w innych miejscach - </span>
               <span>kupując bezpośrednio na lot.com otrzymasz Gwarancję Najlepszej Ceny.</span></p>
-            <a><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></a>
+            <a href="#"><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></a>
           </div>
         </div>
       </li>
@@ -123,7 +132,7 @@
             <h3>Kod promocyjny</h3>
             <p>Zmieniłeś bilet na stronie lot.com, przez biuro podróży lub Contact Center? Wypełnij
               formularz i otrzymaj kod promocyjny -30% na przyszłe podróże z LOT.</p>
-            <a><span>Przejdź do formularza </span><i class="fas fa-chevron-right" id="arrow"></i></a>
+            <a href="#"><span>Przejdź do formularza </span><i class="fas fa-chevron-right" id="arrow"></i></a>
           </div>
         </div>
       </li>
@@ -136,7 +145,7 @@
             <h3>Newsletter LOT</h3>
             <p><span>Chcesz jako pierwszy dowiedzieć się</span><span>o nowych kierunkach lub
                 skorzystać</span><span>wyjątkowych promocji cenowych?</span></p>
-            <a><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></a>
+            <a href="#"><span>Sprawdź </span><i class="fas fa-chevron-right" id="arrow"></i></a>
           </div>
         </div>
       </li>
