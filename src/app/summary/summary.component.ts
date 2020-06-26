@@ -80,3 +80,49 @@ this.showOption2 = '';
 }
 
 }
+
+// fetch('http://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json')
+
+//   .then((resp) => resp.json())
+
+//   .then(function (data) {
+//     console.log(data.rates[0].mid);
+//   })
+
+//   //wykona się gdy błąd
+//   .catch((error) => {
+//     console.log('Błąd', error)
+//   })
+
+//   // finally wykona się zawsze czy dobrze czy zle mozna w ten sposob wyswietlic jakas wiadomosc
+//   .finally(() => {
+//     console.log('koniec')
+//   });
+
+// ///////////////////////////////////////////////////////////////////////////////////////////
+
+// //wybór waluty
+
+// const select = document.getElementById('my-select');
+// const showOptions = document.getElementById('option-selected');
+// const exchangeRate = document.getElementById('exchange-rate');
+
+// select.addEventListener('change', function () {
+//   // showOption.innerHTML = "Wybrałeś opcję" + document.getElementById("my-select").value
+//   // to samo z this
+//   showOptions.innerHTML = 'Wybrałeś walutę: ' + this.value;
+// });
+
+// // szczegóły waluty
+
+// const currency = document.getElementById('currency');
+// const showOption = document.getElementById('selected');
+// const inputValue = document.getElementById('value');
+
+// currency.addEventListener('change', function () {
+// fetch(`https://api.nbp.pl/api/exchangerates/rates/a/${this.value}/?format=json`)
+// .then((resp) => resp.json())
+// .then(function (data) {
+// showOption.innerHTML = `Po przeliczeniu: ${(inputValue.value)*(data.rates[0].mid)} PLN`;
+// })
+// });
