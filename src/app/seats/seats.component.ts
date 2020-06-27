@@ -28,13 +28,20 @@ public hidden = {display: "none"};
 public readonly maxSeats = 9;
 // public readonly maxSeats = this.numbersPassenger;
 
-@ViewChild('num')
+@ViewChild('num', {static: false})
 public num: ElementRef;
 
   constructor() { }
 
-  ngOnInit(): void {}
+  // if static true
+  ngOnInit(): void {
+    // for (var i = 0; i < seatsArray.length; i++) {
+    //   document.getElementById(seatsArray[i]).setAttribute('class', 'free');
+    // }
+    // this.checkSeats();
+  }
 
+ // if static false
   ngAfterViewInit(): void {
     for (var i = 0; i < seatsArray.length; i++) {
       document.getElementById(seatsArray[i]).setAttribute('class', 'free');
