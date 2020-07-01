@@ -25,6 +25,9 @@ public arrayNew: Array<string> = [];
 
 public hidden = {display: "none"};
 
+public countryDeparture;
+public countryArrival;
+
 public readonly maxSeats = 9;
 // public readonly maxSeats = this.numbersPassenger;
 
@@ -54,7 +57,9 @@ this.priceFlight = typeFlight;
 localStorage.setItem('Typ lotu', this.flightType);
 localStorage.setItem('Cena lotu', this.priceFlight);
 
-if (typeFlight == '1000'){
+if (typeFlight == '1000')
+// if ((this.countryDeparture == "Warszawa" && this.countryArrival == "Kraków" || this.countryDeparture == "Warszawa" && this.countryArrival == "Gdańsk") && typeFlight == '1000')
+{
     this.bombardier = {display: 'block'};
     this.boeing737 = {display: 'none'};
     this.boeing787 = {display: 'none'};

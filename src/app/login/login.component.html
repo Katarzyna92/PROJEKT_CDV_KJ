@@ -7,23 +7,28 @@
     <input type="password" placeholder="Hasło" #password name="password">
   </div>
 
+  <!-- <ul>
+    <li *ngFor="let item of data">{{item.email}} . {{ item.password}} </li>
+  </ul> -->
+
   <div class="row">
-    <button (click)="logowanie(email, password)" type="button" class=" btn btn-danger">
+    <button (click)="logowanie(email,password)" type="button" class=" btn btn-danger">
       <span>Zaloguj się </span>
       <i class="fas fa-plane"></i>
     </button>
   </div>
 
+
   <div>{{ comUser }}</div>
 
   <div>{{ info }}</div>
-
 
   <div class="undo">
     <a routerLink="/flight"><i class="fas fa-arrow-circle-left"></i></a>
   </div>
 
 </form>
+
 
 
 <router-outlet> </router-outlet>

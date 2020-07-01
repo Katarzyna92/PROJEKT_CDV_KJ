@@ -1,7 +1,8 @@
 <!-- Ekran wyboru siedzenia -->
 <form>
-  <h2>Wybór samolotu i miejsca</h2>
+  <h2>Wybór miejsca</h2>
 
+  <p>Wybierz miejsca (max 9) <i class="fas fa-arrow-down"></i> <span #num></span></p>
 
   <div class="row">
     <div class="large_text">Typ lotu</div>
@@ -19,7 +20,6 @@
     <p>Typ samolotu: {{flightType}} </p>
     <p>Cena biletu: {{priceFlight | currency: "PLN"}}</p>
   </div>
-  <p>Numery miejsc <span #num></span><i class="fas fa-arrow-down"></i></p>
 
   <div class="row justify-content-center">
     <a routerLink="/details"><button type="button" class="btn btn-danger">
@@ -31,6 +31,8 @@
   <div class="undo">
     <a routerLink="/login"><i class="fas fa-arrow-circle-left"></i></a>
   </div>
+
+<!-- <button (click)="showFlightType()">Wybierz siedzenie</button> -->
 
 </form>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { users } from './users';
+// import { users } from './users';
+import { UsersService } from './users.service';
 
 
 @Component({
@@ -12,21 +13,22 @@ import { users } from './users';
 export class LoginComponent implements OnInit {
 
   public comUser = '';
-
   public info = '';
+  public data: any;
 
-  constructor(private router: Router) { }
+  constructor(private userData: UsersService, private router: Router) { }
+
 
   ngOnInit(): void {
   }
 
-  logowanie(email, password){
-    console.log(email.value);
-    console.log(password.value);
+  logowanie(email, password) {
+    this.userData.getUserData().subscribe((result) => {
+      console.log(result);
+      this.data = result;
 
-    for (let i = 0; i < users.length; i++){
-      if (users[i].email == email.value.toLowerCase() && users[i].password == password.value){
-
+    for (let item of this.data){
+      if (item.email == email.value && item.password == password.value){
         document.querySelector("input[name='email']").classList.add("valid");
         document.querySelector("input[name='password']").classList.add("valid");
         this.comUser = 'Znaleziono użytkownika, za chwilę nastąpi przekierowanie';
@@ -52,5 +54,6 @@ export class LoginComponent implements OnInit {
         document.querySelector("input[name='password']").classList.add("invalid");
       }
     }
+    })
   }
-}
+  }
