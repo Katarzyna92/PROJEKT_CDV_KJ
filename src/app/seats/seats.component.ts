@@ -11,10 +11,9 @@ export class SeatsComponent implements OnInit,  AfterViewInit {
 
 public flightType = '';
 
-public bombardier = {display: "none"};
-public boeing737 = {display: "none"};
-public boeing787 = {display: "none"};
-
+public bombardier = {display: 'none'};
+public boeing737 = {display: 'none'};
+public boeing787 = {display: 'none'};
 
 public popup = false;
 
@@ -23,7 +22,7 @@ public priceFlight = '';
 public numbersPassenger;
 public arrayNew: Array<string> = [];
 
-public hidden = {display: "none"};
+public hidden = {display: 'none'};
 
 public countryDeparture;
 public countryArrival;
@@ -58,7 +57,6 @@ localStorage.setItem('Typ lotu', this.flightType);
 localStorage.setItem('Cena lotu', this.priceFlight);
 
 if (typeFlight == '1000')
-// if ((this.countryDeparture == "Warszawa" && this.countryArrival == "Kraków" || this.countryDeparture == "Warszawa" && this.countryArrival == "Gdańsk") && typeFlight == '1000')
 {
     this.bombardier = {display: 'block'};
     this.boeing737 = {display: 'none'};
@@ -80,9 +78,7 @@ else{
     this.flightType = 'Boeing 787';
     this.num.nativeElement.innerHTML = '';
   }
-
 }
-
 
 checkSeats(){
   let that = this;

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class FlightComponent implements OnInit {
 
-public cities = ['Warszawa', 'Gdańsk', 'Kraków', 'Paryż', 'Londyn', 'Rzym', 'Nowy Jork', 'San Francisco', 'Chicago',];
+public cities = ['Warszawa', 'Gdańsk', 'Kraków', 'Paryż', 'Londyn', 'Rzym', 'Nowy Jork', 'San Francisco', 'Chicago'];
 
 public arrivalCity = '';
 public departureCity = '';

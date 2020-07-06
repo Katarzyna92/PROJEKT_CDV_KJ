@@ -12,10 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { DetailsComponent } from './details/details.component';
 import { SummaryComponent } from './summary/summary.component';
 import { SeatsComponent } from './seats/seats.component';
-
 import { UsersService } from './login/users.service';
-
 import { HttpClientModule } from '@angular/common/http';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/flight', pathMatch: 'full'},
@@ -39,9 +38,7 @@ const routes: Routes = [
     SummaryComponent,
     SeatsComponent
   ],
-  imports: [
-  BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule
-  ],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule],
   providers: [UsersService],
   bootstrap: [AppComponent]
 })
