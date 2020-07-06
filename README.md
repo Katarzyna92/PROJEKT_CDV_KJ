@@ -1,4 +1,8 @@
-# Projekt
+# Projekt systemu rezerwacji biletów lotniczych wraz z rezerwacją miejsc
+
+Dane do logowania:
+e-mail: example1@example.com
+hasło: 1111
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
