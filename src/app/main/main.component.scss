@@ -118,6 +118,11 @@
   }
 }
 
+li.col-3{
+  @media only screen and (max-width: 599px)and (orientation: portrait) {
+    padding: 0 2px;
+  }
+}
 
 .blue_square {
   color: white;
@@ -141,7 +146,7 @@
   }
 
   @media only screen and (max-width: 599px)and (orientation: portrait) {
-    width: 95px;
+    width: 87px;
     height: 120px;
   }
 
@@ -197,8 +202,8 @@
   }
 
   @media only screen and (max-width: 599px)and (orientation: portrait) {
-    width: 95px;
-    height: 170px;
+    width: 85px;
+    height: 185px;
   }
 
   h3 {
