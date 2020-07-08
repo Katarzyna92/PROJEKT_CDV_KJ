@@ -25,6 +25,7 @@ public numbersSeniors;
 public flightType;
 public priceFlight;
 public value;
+public maxSeats;
 
 @ViewChild('showOption', {static: false})
 public num: ElementRef;
@@ -36,6 +37,7 @@ ngOnInit(): void {
 }
 
 complete(){
+
   this.lastName = localStorage.getItem('Nazwisko');
   this.firstName = localStorage.getItem('Imię');
   this.addressName = localStorage.getItem('Adres');
@@ -46,18 +48,19 @@ complete(){
   this.countryArrival =  localStorage.getItem('Przylot');
   this.dateDeparture = localStorage.getItem('Data wylotu');
   this.dateArrival = localStorage.getItem('Data powrotu');
-  this.numbersPassengers = localStorage.getItem('Liczba pasażerów');
+  this.maxSeats = localStorage.getItem('Liczba pasażerów');
   this.flightType = localStorage.getItem('Typ lotu');
   this.priceFlight = localStorage.getItem('Cena lotu');
   this.numbersChildren = localStorage.getItem('Dzieci');
   this.numbersSeniors = localStorage.getItem('Seniorzy');
-  this.price = (this.numbersPassengers * this.priceFlight) - ((this.numbersChildren * this.priceFlight * this.discountChildrenValue *  0.001)+(this.numbersSeniors * this.priceFlight * this.discountSeniorsValue * 0.001)) + (this.luggageValue * 1);
+  this.price = (this.maxSeats * this.priceFlight) - ((this.numbersChildren * this.priceFlight * this.discountChildrenValue *  0.001)+(this.numbersSeniors * this.priceFlight * this.discountSeniorsValue * 0.001)) + (this.luggageValue * 1);
+  // console.log(this.maxSeats);
+  // console.log(this.priceFlight);
 }
 
 checkPrice(value){
 let that = this;
 this.value = value;
-
 
 fetch(`http://api.nbp.pl/api/exchangerates/rates/a/${this.value}/?format=json`)
 
