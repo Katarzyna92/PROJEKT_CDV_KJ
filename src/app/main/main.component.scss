@@ -342,7 +342,7 @@ li.col-3{
 .popup {
   position: absolute;
   width: 60vw;
-  height: 60%;
+  height: 80%;
   background-color: #f1f2f4;
   top: 100%;
   left: 50%;
@@ -354,10 +354,11 @@ li.col-3{
 
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     width: 80vw;
+    height: 80%;
   }
 
   @media only screen and (min-width: 600px) and (max-width: 767px) and (orientation:portrait) {
-    height: 50%;
+    height: 60%;
   }
 
   @media only screen and (max-width: 599px)and (orientation: portrait) {

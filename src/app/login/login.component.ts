@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         document.querySelector("input[name='email']").classList.add("valid");
         document.querySelector("input[name='password']").classList.add("valid");
         this.comUser = 'Znaleziono użytkownika, za chwilę nastąpi przekierowanie';
-        this.info = 'Wylogowanie nastąpi za 2 minuty';
+        this.info = 'Wylogowanie nastąpi za 10 minut';
 
         setTimeout( () => {
             this.router.navigate(['/seats']);
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
             password.value = '';
             this.router.navigate(['/flight']);
             localStorage.clear();
-        }, 120000);
+        }, 600000);
         break;
       }
 

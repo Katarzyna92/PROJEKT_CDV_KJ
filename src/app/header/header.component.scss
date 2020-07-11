@@ -22,20 +22,30 @@ img {
   }
 }
 
-.menu h3 {
-  font-size: 20px;
-  font-weight: bold;
-
-  @media only screen and (min-width: 768px) and (max-width: 992px) {
-    font-size: 18px;
+.menu {
+  a {
+    @media only screen and (max-width: 599px)and (orientation: portrait) {
+      margin: 0;
+      padding: 1px 5px;
+    }
   }
 
-  @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
-    font-size: 16px;
-  }
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
 
-  @media only screen and (max-width: 599px)and (orientation: portrait) {
-    font-size: 14px;
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      font-size: 18px;
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 767px)and (orientation: portrait) {
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 599px)and (orientation: portrait) {
+      font-size: 10px;
+
+    }
   }
 }
 
@@ -45,6 +55,6 @@ img {
 
   @media only screen and (max-width: 599px)and (orientation: portrait) {
     font-size: 10px;
+    padding: 3px 5px;
   }
 }
-
